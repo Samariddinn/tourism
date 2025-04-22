@@ -1,0 +1,31 @@
+.technology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  align-items: center;
+  column-gap: 6em;
+  row-gap: 2em;
+}
+
+.number-container {
+  border: 1px solid #63698a;
+  padding: 15px 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid #fff;
+  }
+
+  span {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+.active-number {
+  background-color: #fff;
+  color: black;
+}

@@ -1,0 +1,130 @@
+<header class="mt-5 w-full">
+  <div class="flex items-center justify-between">
+    <div class="pl-6">
+      <mat-icon
+        svgIcon="header-logo"
+        class="header-icon"
+      ></mat-icon>
+    </div>
+
+    <!-- Right links -->
+    <div class="right-links-container none-sm pr-6">
+      <div class="flex gap-8 items-center">
+        <div
+          class="links-content"
+          routerLinkActive="active-link"
+          routerLink="/home"
+        >
+          <!-- Link 1 -->
+          <span class="header-number">00</span>
+          <span class="header-title">home </span>
+        </div>
+        <!-- /Link 1 -->
+
+        <!-- Link 2 -->
+        <div
+          class="links-content"
+          routerLink="/destination"
+          routerLinkActive="active-link"
+        >
+          <span class="header-number">01</span>
+          <span class="header-title">destination </span>
+        </div>
+        <!-- /Link 2 -->
+
+        <!-- Link 3 -->
+        <div
+          class="links-content"
+          routerLink="/crew"
+          routerLinkActive="active-link"
+        >
+          <span class="header-number">02</span>
+          <span class="header-title"> crew </span>
+        </div>
+        <!-- /Link 3 -->
+
+        <!-- Link 4 -->
+        <div
+          class="links-content"
+          routerLink="/technology"
+          routerLinkActive="active-link"
+        >
+          <span class="header-number">03</span>
+          <span class="header-title">technology </span>
+        </div>
+        <!-- /Link 4 -->
+      </div>
+    </div>
+    <div class="pr-6 cursor-pointer block-sm hidden">
+      <mat-icon
+        (click)="openMenu()"
+        svgIcon="menu"
+      ></mat-icon>
+    </div>
+
+    <!-- Menu content -->
+    <div
+      [class.menu-opened]="isMenuOpen()"
+      class="menu-container"
+    >
+      <div class="menu-style p-5 absolute right-0">
+        <div class="flex cursor-pointer justify-end">
+          <mat-icon
+            (click)="closeMenu()"
+            svgIcon="close"
+          ></mat-icon>
+        </div>
+
+        <!-- Links -->
+        <div class="flex mt-20 flex-col gap-5">
+          <div
+            class="menu-links"
+            routerLink="/home"
+            routerLinkActive="active-link"
+          >
+            <!-- Link 1 -->
+            <span class="header-number">00</span>
+            <span class="header-title">home </span>
+          </div>
+          <!-- /Link 1 -->
+
+          <!-- Link 2 -->
+          <div
+            class="menu-links"
+            routerLink="/destination"
+            routerLinkActive="active-link"
+          >
+            <span class="header-number">01</span>
+            <span class="header-title">destination </span>
+          </div>
+          <!-- /Link 2 -->
+
+          <!-- Link 3 -->
+          <div
+            class="menu-links"
+            routerLink="/crew"
+            routerLinkActive="active-link"
+          >
+            <span class="header-number">02</span>
+            <span class="header-title"> crew </span>
+          </div>
+          <!-- /Link 3 -->
+
+          <!-- Link 4 -->
+          <div
+            class="menu-links"
+            routerLink="/technology"
+            routerLinkActive="active-link"
+          >
+            <span class="header-number">03</span>
+            <span class="header-title">technology </span>
+          </div>
+          <!-- /Link 4 -->
+        </div>
+        <!-- /Links -->
+      </div>
+    </div>
+    <!-- /Menu content -->
+  </div>
+  <!-- /Right links -->
+</header>

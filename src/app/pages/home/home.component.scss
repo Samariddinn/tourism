@@ -1,0 +1,37 @@
+@media (max-width: 650px) {
+  * {
+    overflow-y: hidden;
+  }
+}
+
+.custom-mt {
+  margin-block: 150px 20px;
+}
+
+.text-line {
+  line-height: 1;
+}
+
+.c-blue-300 {
+  color: #d0d6f9;
+}
+
+/// Media queries
+@layer home {
+  // Mobiles
+  @media (max-width: 650px) {
+    .travelling-container-sm {
+      flex-direction: column;
+      text-align: center;
+      row-gap: 2em;
+    }
+  }
+  // Tablets
+  @media (min-width: 650px) and (max-width: 850px) {
+    .travelling-container-md {
+      flex-direction: column;
+      text-align: center;
+      row-gap: 3em;
+    }
+  }
+}

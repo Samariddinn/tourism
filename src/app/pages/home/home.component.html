@@ -1,0 +1,54 @@
+<div class="text-white min-h-[100vh] main-lg max-w-[1900px] w-full">
+  <!-- Background images for different devices -->
+  <div class="background-container img-size-md img-size-sm w-full">
+    <picture>
+      <source
+        media="(max-width: 650px)"
+        srcset="images/header-background.mobile.jpg"
+      />
+
+      <source
+        media="(min-width: 650px) and (max-width: 950px)"
+        srcset="images/header-background.tablet.jpg"
+      />
+      <img
+        class="background-img"
+        src="images/header-background.destkop.jpg"
+        alt=""
+      />
+    </picture>
+  </div>
+  <!--/ Background images for different devices -->
+
+  <!-- Header component -->
+  <app-header></app-header>
+  <!-- /Header component -->
+
+  <!-- Travelling -->
+  <div class="w-[90%] custom-mt mx-auto">
+    <div class="flex travelling-container-md travelling-container-sm justify-between items-center">
+      <!-- Left content -->
+      <div class="w-[500px] max-w-full">
+        <span class="uppercase text-[1.1rem] c-blue-300">so, you want to travel to </span>
+        <h2 class="text-line mt-3 uppercase text-[5rem]">space</h2>
+        <p class="c-blue-300 mt-3"
+          >Let’s face it; if you want to go to space, you might as well genuinely go to outer space
+          and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a
+          truly out of this world experience!</p
+        >
+      </div>
+      <!-- /Left content -->
+
+      <!-- Right content -->
+      <div>
+        <img
+          class="w-[200px] rounded-[50%]"
+          src="images/explore.jpg"
+          alt="Explore img"
+        />
+      </div>
+      <!-- /Right content -->
+    </div>
+  </div>
+  <!-- /Travelling -->
+</div>

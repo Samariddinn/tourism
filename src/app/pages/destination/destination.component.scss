@@ -1,0 +1,46 @@
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 1em;
+}
+
+.destination-link {
+  color: #d0d6f9;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.destination-container {
+  position: relative;
+}
+
+.destination-link.destination-active::after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  height: 2px;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+}
+
+@layer destination {
+  @media (max-width: 550px) {
+    .mx-sm {
+      justify-content: center;
+      margin-inline: 0;
+    }
+  }
+  @media (max-width: 750px) {
+    .img-planet-md {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+  }
+}

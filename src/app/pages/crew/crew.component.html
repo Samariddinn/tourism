@@ -1,0 +1,62 @@
+<div class="text-white w-full">
+  <!-- Background images for different devices -->
+  <div class="background-container w-full">
+    <picture>
+      <source
+        media="(max-width: 650px)"
+        srcset="images/crew/background-crew-mobile.jpg"
+      />
+
+      <source
+        media="(min-width: 650px) and (max-width: 950px)"
+        srcset="images/crew/background-crew-tablet.jpg"
+      />
+      <img
+        class="background-img"
+        srcset="images/crew/background-crew-desktop.jpg"
+        alt=""
+      />
+    </picture>
+  </div>
+  <!--/ Background images for different devices -->
+
+  <!-- Header component -->
+  <app-header></app-header>
+  <!-- /Header component -->
+
+  <div class="flex my-20 mx-sm items-center gap-3 ml-20">
+    <span class="text-[#484951] font-bold text-[1.3rem]">02</span>
+    <h3 class="text-[1.4rem]">MEET YOUR CREW</h3>
+  </div>
+
+  <!-- Main item -->
+  <div class="w-[90%] mx-auto">
+    <div class="crew-grid">
+      <div class="flex flex-col gap-4">
+        <h2 class="text-[#484951] custom-line uppercase text-[1.7rem]">{{ activeCrew.role }}</h2>
+        <h3 class="text-[2.4rem] uppercase custom-line">{{ activeCrew.name }}</h3>
+        <p class="text-[#D0D6F9]">{{ activeCrew.bio }}</p>
+
+        <div class="flex items-center gap-5 mt-15">
+          <i
+            *ngFor="let dot of crewMembers; let i = index"
+            class="fa-solid fa-circle dot-style active-dot"
+            [class.active-dot]="i === activeCrewIndex"
+            (click)="setActiveCrew(i)"
+            [attr.data-index]="i"
+          ></i>
+        </div>
+      </div>
+
+      <div class="w-full crew-img-sm">
+        <img
+          class="w-[400px]"
+          [src]="activeCrew.image"
+          alt="{{ activeCrew.name }}"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+  <!-- Main item -->
+</div>

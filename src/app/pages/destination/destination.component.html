@@ -1,0 +1,90 @@
+<div class="text-white w-full">
+  <!-- Background images for different devices -->
+  <div class="background-container w-full">
+    <picture>
+      <source
+        media="(max-width: 650px)"
+        srcset="images/destination-background.mobile.jpg"
+      />
+
+      <source
+        media="(min-width: 650px) and (max-width: 950px)"
+        srcset="images/destination-background.tablet.jpg"
+      />
+      <img
+        class="background-img"
+        src="images/destination-background.destkop.jpg"
+        alt=""
+      />
+    </picture>
+  </div>
+  <!--/ Background images for different devices -->
+
+  <!-- Header component -->
+  <app-header></app-header>
+  <!-- /Header component -->
+
+  <!-- Main item -->
+  <div class="flex my-20 items-center mx-sm gap-3 ml-20">
+    <span class="text-[#484951] font-bold text-[1.3rem]">01</span>
+    <h3 class="text-[1.4rem]">PICK YOUR DESTINATION</h3>
+  </div>
+
+  <!-- Grid row-->
+  <div class="w-[90%] mx-auto">
+    <div class="destination-grid w-full">
+      <div class="img-planet-md">
+        <img
+          class="w-[300px]"
+          [src]="currentDestination.image"
+          [alt]="currentDestination.name + 'image '"
+        />
+      </div>
+      <div class="flex flex-col gap-6 w-full">
+        <!-- Links -->
+        <div class="flex gap-7 items-center">
+          <div
+            class="destination-container"
+            *ngFor="let destination of destinations"
+          >
+            <a
+              class="destination-link"
+              [class.destination-active]="activeDestination === destination.name"
+              (click)="setActiveDestination(destination.name)"
+            >
+              {{ destination.name }}</a
+            >
+          </div>
+        </div>
+        <!-- /Links -->
+
+        <!-- Moon content -->
+        <h2 class="text-[5rem] custom-line mt-2">{{ currentDestination.name | uppercase }}</h2>
+
+        <p class="text-[#D0D6F9]">{{ currentDestination.description }}</p>
+
+        <div class="bg-[#979797] h-[1px] w-full"> </div>
+
+        <div class="flex gap-25">
+          <div class="flex flex-col">
+            <span class="text-[#D0D6F9] text-[.875rem]">AVG. DISTANCE</span>
+            <span class="text-[1.7rem]">{{ currentDestination.distance }}</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-[#D0D6F9] text-[.875rem]">EST. TRAVEL TIME</span>
+            <span class="text-[1.7rem]">{{ currentDestination.travelTime }}</span>
+          </div>
+        </div>
+        <!-- /Moon content -->
+      </div>
+    </div>
+  </div>
+
+  <!--/ Grid row-->
+  <!-- <img
+    class="w-[350px]"
+    src="images/destination/image-mars.webp"
+    alt=""
+  /> -->
+  <!-- /Main item -->
+</div>

@@ -1,0 +1,86 @@
+<div class="text-white w-full">
+  <!-- Background images for different devices -->
+  <div class="background-container w-full">
+    <picture>
+      <source
+        media="(max-width: 650px)"
+        srcset="images/technology/background-technology-mobile.jpg"
+      />
+
+      <source
+        media="(min-width: 650px) and (max-width: 950px)"
+        srcset="images/technology/background-technology-tablet.jpg"
+      />
+      <img
+        class="background-img"
+        srcset="images/technology/background-technology-desktop.jpg"
+        alt=""
+      />
+    </picture>
+  </div>
+  <!--/ Background images for different devices -->
+
+  <!-- Header component -->
+  <app-header></app-header>
+  <!-- /Header component -->
+
+  <div class="flex my-20 items-center gap-3 ml-20">
+    <span class="text-[#484951] font-bold text-[1.3rem]">03</span>
+    <h3 class="text-[1.4rem]">SPACE LAUNCH 101</h3>
+  </div>
+
+  <!-- Main items -->
+  <div class="w-[90%] mx-auto"
+    ><div class="technology-grid">
+      <!-- Left content -->
+      <div class="flex gap-10">
+        <div class="flex flex-col gap-6">
+          <div
+            class="number-container"
+            [class.active-number]="activeIndex === 0"
+            (click)="setActiveTechnology(0)"
+          >
+            <span>1</span>
+          </div>
+
+          <div
+            class="number-container"
+            [class.active-number]="activeIndex === 1"
+            (click)="setActiveTechnology(1)"
+          >
+            <span>2</span>
+          </div>
+
+          <div
+            class="number-container"
+            [class.active-number]="activeIndex === 2"
+            (click)="setActiveTechnology(2)"
+          >
+            <span>3</span>
+          </div>
+        </div>
+
+        <div>
+          <article class="flex flex-col gap-4">
+            <span class="uppercase text-[#6c6d75] text-[1.8rem]">The terminology...</span>
+            <h2 class="uppercase text-[2.5rem] custom-line">{{ activeTechnology.title }}</h2>
+            <p class="text-[#D0D6F9]">{{ activeTechnology.text }}</p>
+          </article>
+        </div>
+      </div>
+      <!-- /Left content -->
+
+      <!-- Right content -->
+      <div>
+        <img
+          class="max-h-[400px] w-full"
+          [src]="activeTechnology.imgPath"
+          alt="activeTechnology.title"
+        />
+      </div>
+      <!-- /Right content -->
+    </div>
+  </div>
+
+  <!-- Main items -->
+</div>
