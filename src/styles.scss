@@ -41,12 +41,12 @@ picture {
 @layer home {
   @media (min-width: 300px) and (max-width: 650px) {
     .img-size-sm {
-      height: 145vh;
+      height: 105vh;
     }
   }
   @media (min-width: 650px) and (max-width: 850px) {
     .img-size-md {
-      height: 140vh;
+      height: 100vh;
     }
   }
 
